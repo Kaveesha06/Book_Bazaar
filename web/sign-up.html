@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Book Bazaar</title>
+    
+    <!-- Favicons -->
+    <link href="assets/img/favicon.ico" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    
+    <!-- Main CSS File -->
+    <link href="assets/css/style-sign-up.css" rel="stylesheet">
+</head>
+<body class="signup-page">
+
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <div class="container d-flex justify-content-end">
+            <span class="already-member">Already a member?</span>
+            <a href="signIn.html" class="btn-signin">Sign In</a>
+        </div>
+    </div>
+
+    <!-- Main Sign Up Section -->
+    <main class="main-signup">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="signup-card" data-aos="fade-up">
+                        <div class="logo text-center mb-4">
+                            <i class="bi bi-book"></i>
+                            <h1>Book Bazaar</h1>
+                        </div>
+                        
+                        <h2 class="text-center mb-4">Create Your Account</h2>
+                        <p class="text-center mb-5">Join our community of book lovers and start your reading journey today.</p>
+                        
+                        <form id="signupForm" class="signup-form">
+                            <div class="row mb-3">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <div class="form-group">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                        <div class="invalid-feedback">Please enter your first name</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                        <div class="invalid-feedback">Please enter your last name</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" required>
+                                <div class="invalid-feedback">Please enter a valid email address</div>
+                            </div>
+                            
+                            <div class="form-group mb-4">
+                                <label for="password" class="form-label">Password</label>
+                                <div class="password-input">
+                                    <input type="password" class="form-control" id="password" required>
+                                    <button type="button" class="toggle-password">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="invalid-feedback">Password must be at least 8 characters</div>
+                                <div class="password-strength mt-2">
+                                    <div class="strength-bar"></div>
+                                    <span class="strength-text"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    I agree to the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-100 mb-3">Create Account</button>
+                            
+                            <div class="divider">
+                                <span>or sign up with</span>
+                            </div>
+                            
+                            <div class="social-login">
+                                <a href="#" class="btn btn-google">
+                                    <i class="bi bi-google me-3"></i>Google
+                                </a>
+                                <a href="#" class="btn btn-facebook">
+                                    <i class="bi bi-facebook me-3"></i>Facebook
+                                </a>
+                            </div>
+                            
+                            <p class="text-center mt-4">
+                                Already have an account? <a href="signIn.html">Sign In</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    
+    <!-- Main JS File -->
+    <script src="assets/js/script-sign-up.js"></script>
+</body>
+</html>
