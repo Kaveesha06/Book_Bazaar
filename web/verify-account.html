@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Account | Book Bazaar</title>
+    
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    
+    <!-- Main CSS File -->
+    <link href="assets/css/verify-acc.css" rel="stylesheet">
+</head>
+<body class="verify-page">
+
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <div class="container d-flex justify-content-end">
+            <span class="already-member">Need help?</span>
+            <a href="contact.html" class="btn-help">Contact Support</a>
+        </div>
+    </div>
+
+    <!-- Main Verification Section -->
+    <main class="main-verify">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="verify-card" data-aos="fade-up">
+                        <div class="logo text-center mb-4">
+                            <i class="bi bi-book"></i>
+                            <h1>Book Bazaar</h1>
+                        </div>
+                        
+                        <div class="verify-header text-center mb-4">
+                            <i class="bi bi-envelope-check"></i>
+                            <h2>Verify Your Email</h2>
+                            <p class="verify-instructions">
+                                Please verify your email to secure your account and unlock all features. 
+                                We've sent a 6-digit verification code to your email address.
+                            </p>
+                        </div>
+                        
+                        <form id="verifyForm" class="verify-form">
+                            <div class="form-group mb-4">
+                                <label for="verificationCode" class="form-label">Verification Code</label>
+                                <div class="code-inputs">
+                                    <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autofocus>
+                                    <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
+                                    <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
+                                    <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
+                                    <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
+                                    <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
+                                </div>
+                                <div class="invalid-feedback">Please enter the complete verification code</div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-100 mb-3">
+                                Verify Account
+                            </button>
+                            
+                            <div class="text-center mt-4">
+                                <p class="resend-text">
+                                    Didn't receive the code? 
+                                    <a href="#" id="resendCode">Resend code</a>
+                                </p>
+                                <div class="countdown d-none" id="countdown">
+                                    Resend available in <span id="countdownSeconds">60</span> seconds
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    
+    <!-- Main JS File -->
+    <script src="assets/js/verify-account.js"></script>
+</body>
+</html>
