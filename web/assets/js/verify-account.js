@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form validation
     const verifyForm = document.getElementById('verifyForm');
     if (verifyForm) {
-        verifyForm.addEventListener('submit', function(e) {
+        verifyForm.addEventListener('submit',async function(e) {
             e.preventDefault();
             
             // Check if all code inputs are filled
@@ -59,10 +59,43 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.invalid-feedback').style.display = 'none';
             
             // In a real app, you would verify the code with your backend
-            console.log('Verification code submitted:', verificationCode);
+//            console.log('Verification code submitted:', verificationCode);
+            const verification={
+                verificationCode: verificationCode
+            };
             
-            // Simulate successful verification
-            alert('Email verified successfully! Redirecting to your account...');
+            try{
+                const response = await fetch("VerifyAccount",{
+                    method:"POST",
+                    headers:{
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(verification)
+                });
+                
+                if (response.ok) {
+                    const json = await response.json();
+
+                    if (json.status) {
+                        window.location = "index.html";
+                    } else {
+                        if (json.message === "1") {
+                            window.location = "sign-in.html";
+                        } else {
+                            document.getElementById("message").innerHTML = json.message;
+                        }
+                    }
+                } else {
+                    document.getElementById("message").innerHTML = "Verification failed!";
+                }
+
+                
+            }catch(error){
+                console.error("Error during verification:", error);
+                document.getElementById("message").innerHTML = "An error occurred.";
+            }
+            
+            // Simulate successful verification           
             // window.location.href = 'account.html';
         });
     }
@@ -108,3 +141,39 @@ document.addEventListener('DOMContentLoaded', function() {
         startCountdown();
     }
 });
+//
+//async function verifyAccount() {
+//    const verificationCode = document.getElementById("verificationCode").value;
+//    const verification = {
+//        verificationCode: verificationCode
+//    };
+//
+//    const verificationJson = JSON.stringify(verification);
+//
+//    const response = await fetch(
+//            "VerifyAccount",
+//            {
+//                method: "POST",
+//                header: {
+//                    "Content-Type": "application/json"
+//                },
+//                body: verificationJson
+//            }
+//    );
+//    
+//    if (response.ok){
+//        const json = await response.json();
+//        
+//        if(json.status){
+//            window.location="index.html";
+//        }else{
+//            if(json.message==="1"){
+//                window.location="sign-in.html";
+//            }else{
+//                document.getElementById("message").innerHTML=json.message;
+//            }
+//        }
+//    }else{
+//        document.getElementById("message").innerHTML="verification failed!";
+//    }
+//}

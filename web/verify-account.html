@@ -6,7 +6,7 @@
     <title>Verify Account | Book Bazaar</title>
     
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/favicon.ico" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     
     <!-- Fonts -->
@@ -51,11 +51,14 @@
                                 We've sent a 6-digit verification code to your email address.
                             </p>
                         </div>
-                        
+                        <p class="text-danger" id="message"></p>
+
                         <form id="verifyForm" class="verify-form">
                             <div class="form-group mb-4">
                                 <label for="verificationCode" class="form-label">Verification Code</label>
-                                <div class="code-inputs">
+                                <div id="verificationCode" class="code-inputs">
+                                <!--<input type="text" class="form-control" value="" id="verificationCode">-->
+
                                     <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric" autofocus>
                                     <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
                                     <input type="text" maxlength="1" pattern="[0-9]" inputmode="numeric">
@@ -65,7 +68,6 @@
                                 </div>
                                 <div class="invalid-feedback">Please enter the complete verification code</div>
                             </div>
-                            
                             <button type="submit" class="btn btn-primary w-100 mb-3">
                                 Verify Account
                             </button>
@@ -92,5 +94,6 @@
     
     <!-- Main JS File -->
     <script src="assets/js/verify-account.js"></script>
+
 </body>
 </html>

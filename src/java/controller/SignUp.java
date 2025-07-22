@@ -37,12 +37,12 @@ public class SignUp extends HttpServlet {
         String lastName = user.get("lastName").getAsString();
         final String email = user.get("email").getAsString();
         String password = user.get("password").getAsString();
-//        String terms = request.getParameter("terms")
+//        boolean terms = user.get("terms").getAsBoolean();
         
-//        System.out.println(firstName);
-//        System.out.println(lastName);
-//        System.out.println(email);
-//        System.out.println(password);
+        System.out.println(firstName);
+        System.out.println(lastName);
+        System.out.println(email);
+        System.out.println(password);
         
         JsonObject responseObject = new JsonObject();
         responseObject.addProperty("status", false);
@@ -98,6 +98,11 @@ public class SignUp extends HttpServlet {
                 }).start();
                 //send email
                 
+                //session management
+                HttpSession ses = request.getSession();
+                ses.setAttribute("email",email);
+                //session management
+           
                 responseObject.addProperty("status", true);
                 responseObject.addProperty("message", "Registration success. Check your Email");
 
