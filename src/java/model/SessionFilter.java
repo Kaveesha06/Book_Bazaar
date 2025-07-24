@@ -28,6 +28,10 @@ public class SessionFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest)request;
         HttpServletResponse res = (HttpServletResponse)response;
         HttpSession s = req.getSession(false);
+        
+        res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+        res.setHeader("Pragma", "no-cach");
+        res.setHeader("Expires", "0");
                 
         if (s != null && s.getAttribute("user") != null) {
             res.sendRedirect("index.html");
