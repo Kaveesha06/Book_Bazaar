@@ -15,10 +15,6 @@ import javax.servlet.http.HttpSession;
 @WebFilter(filterName = "SessionFilter", urlPatterns = {"/sign-up.html","/sign-in.html","/verify-account.html"})
 public class SessionFilter implements Filter {
 
-    /**
-     *
-     * @param filterConfig
-     */
     @Override
     public void init(FilterConfig filterConfig) {
     }
