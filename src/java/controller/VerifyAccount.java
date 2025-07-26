@@ -5,7 +5,6 @@ import com.google.gson.JsonObject;
 import hibernate.HibernateUtil;
 import hibernate.User;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -61,7 +60,7 @@ public class VerifyAccount extends HttpServlet {
                 
                 s.update(user);
                 s.beginTransaction().commit();
-                s.close();
+                
                 
                 //store user in the session
                 ses.setAttribute("user", user);
@@ -70,6 +69,7 @@ public class VerifyAccount extends HttpServlet {
                 responseObject.addProperty("status", true);
                 responseObject.addProperty("message", "Verification Success");
             }
+            s.close();
         }
         
         String reponseText = gson.toJson(responseObject);
