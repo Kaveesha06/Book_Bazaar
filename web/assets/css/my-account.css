@@ -662,34 +662,6 @@ input:checked + .slider:before {
     }
 }
 
-
-.form-group {
-  margin-top: 15px;
-}
-
-.input-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-/*
-.custom-select {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-  font-size: 14px;
-  appearance: none;  Remove default arrow in some browsers 
-}
-
-.custom-select:focus {
-  outline: none;
-  border-color: #4d90fe;
-  box-shadow: 0 0 3px rgba(77, 144, 254, 0.5);
-}*/
-
-
 .custom-select {
   width: 100%;
   padding: 14px 16px;
@@ -702,4 +674,3 @@ input:checked + .slider:before {
   height: 52px;                  /* Match input height */
   box-sizing: border-box;
 }
-
