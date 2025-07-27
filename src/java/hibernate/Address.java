@@ -25,15 +25,15 @@ public class Address implements Serializable {
     @Column(name = "line2", length=100, nullable = false)
     private String lineTwo;
 
-    @ManyToOne
-    @JoinColumn(name = "city_id")
-    private City city;
-    
     @Column(name = "postal_code", length = 5, nullable = false)
     private String postalCode;
     
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "city_id")
+    private City city;
+
+    @ManyToOne
+    @JoinColumn(name = "users_id")
     private User user;
 
     public Address() {

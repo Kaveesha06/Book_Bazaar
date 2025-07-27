@@ -9,6 +9,7 @@ import hibernate.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,6 +43,15 @@ public class MyAccount extends HttpServlet {
             responseObject.addProperty("since", since);
             
             Gson gson = new Gson();
+            SessionFactory sf = HibernateUtil.getSessionFactory();
+            Session s = sf.openSession();
+            Criteria c = s.createCriteria(Address.class);
+            c.add(Restrictions.eq("user", user));
+            if(!c.list().isEmpty()){
+                List<Address> addressList = c.list();
+                responseObject.add("addressList", gson.toJsonTree(addressList));
+            }
+
             String toJson = gson.toJson(responseObject);
             response.setContentType("application/json");
             response.getWriter().write(toJson);
