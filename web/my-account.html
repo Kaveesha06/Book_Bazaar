@@ -9,7 +9,7 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body onload="getUserData();">
+<body onload="loadData();">
     <div class="container">
         <!-- Header Section -->
         <div class="profile-header">
@@ -45,7 +45,7 @@
                     <i class="fas fa-user"></i>
                     <span>Profile Info</span>
                 </button>
-<!--                <button class="tab-btn" data-tab="orders">
+                <button class="tab-btn" data-tab="orders">
                     <i class="fas fa-shopping-bag"></i>
                     <span>My Orders</span>
                 </button>
@@ -56,7 +56,7 @@
                 <button class="tab-btn" data-tab="settings">
                     <i class="fas fa-cog"></i>
                     <span>Settings</span>
-                </button>-->
+                </button>
             </nav>
         </div>
 
@@ -87,6 +87,16 @@
                                 <div class="input-group">
                                     <i class="fas fa-envelope input-icon"></i>
                                     <input type="text" id="currentPassword" value="" readonly>
+                                </div>
+                                <label for="email">New Password:</label>
+                                <div class="input-group">
+                                    <i class="fas fa-envelope input-icon"></i>
+                                    <input type="password" id="newPassword" value="">
+                                </div>
+                                <label for="email">Confirm Password:</label>
+                                <div class="input-group">
+                                    <i class="fas fa-envelope input-icon"></i>
+                                    <input type="password" id="confirmPassword" value="" >
                                 </div>
                             </div>
                         </div>
@@ -125,7 +135,7 @@
 
                             </div>
                         </div>
-                        <p class="text-danger" id="message"></p>
+                        <p class="text-danger" id="message">message</p>
                     </div>
 
                     <!-- Save Button (hidden initially) style="display: none;" -->
@@ -143,7 +153,7 @@
             </div>
 
 
-<!--         Orders Tab Content 
+         Orders Tab Content 
         <div class="tab-content" id="orders-tab">
             <div class="content-card">
                 <h2 class="section-title">Order History</h2>
@@ -271,7 +281,7 @@
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>
 
     <script src="assets/js/sign-out.js"></script>
     <script src="assets/js/my-account.js"></script>
